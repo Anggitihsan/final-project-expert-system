@@ -4,47 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptop Recommendation</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Enter Laptop Requirements</h1>
-    <form id="laptopForm">
-        <label for="cpu">CPU:</label>
-        <select id="cpu" name="cpu" required>
-            <option value="Intel">Intel</option>
-            <option value="AMD">AMD</option>
-        </select><br><br>
-
-        <label for="gpu">GPU:</label>
-        <select id="gpu" name="gpu" required>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select><br><br>
-
-        <label for="ram">RAM (GB):</label>
-        <input type="number" id="ram" name="ram" min="4" max="16" required><br><br>
-
-        <label for="storage">Storage (GB):</label>
-        <select id="storage" name="storage" required>
-            <option value="256">256</option>
-            <option value="512">512</option>
-            <option value="1000">1000</option>
-        </select><br><br>
-
-        <label for="ukuran_layar">Screen Size (inches):</label>
-        <input type="number" id="ukuran_layar" name="ukuran_layar" min="10" max="16" required><br><br>
-
-        <label for="berat">Weight (kg):</label>
-        <input type="number" id="berat" name="berat" min="1" max="4" required><br><br>
-
-        <label for="gaming">Gaming:</label>
-        <select id="gaming" name="gaming" required>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select><br><br>
-
-        <button type="submit">Get Recommendation</button>
-    </form>
-    <div id="result"></div>
+    <header>
+        <h1>Sistem Pakar Rekomendasi Laptop</h1>
+    </header>
+    <section id="form-container" class="container">
+        <h2 class="container-header">Enter Laptop Requirements</h2>
+        <form id="laptopForm" class="form">
+            <label for="cpu" class="form-label">CPU:</label>
+            <select id="cpu" name="cpu" class="form-input" required>
+                <option value="Intel">Intel</option>
+                <option value="AMD">AMD</option>
+            </select>
+            <label for="gpu" class="form-label">GPU:</label>
+            <select id="gpu" name="gpu" class="form-input" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <label for="ram" class="form-label">RAM (GB):</label>
+            <input type="number" id="ram" name="ram" class="form-input" min="4" max="16" required>
+            <label for="storage" class="form-label">Storage (GB):</label>
+            <select id="storage" name="storage" class="form-input" required>
+                <option value="256">256</option>
+                <option value="512">512</option>
+                <option value="1000">1000</option>
+            </select>
+            <label for="ukuran_layar" class="form-label">Screen Size (inches):</label>
+            <input type="number" id="ukuran_layar" name="ukuran_layar" class="form-input" min="10" max="16" required>
+            <label for="berat" class="form-label">Weight (kg):</label>
+            <input type="number" id="berat" name="berat" class="form-input" min="1" max="4" required>
+            <label for="gaming" class="form-label">Gaming:</label>
+            <select id="gaming" name="gaming" class="form-input" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button type="submit" class="form-button">Get Recommendation</button>
+        </form>
+    </section>
+    <div id="result" class="result"></div>
 
     <script>
         document.getElementById('laptopForm').addEventListener('submit', async function(event) {

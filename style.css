@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+html,
+body {
+  overflow: auto;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #e1dfea; */
+}
+
+body {
+  background-image: url("assets/Seamless\ Pattern\ Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+header {
+  background-color: #004ba8;
+  color: white;
+  text-align: center;
+  padding: 4px 24px;
+  box-shadow: 0px 28px 56px 0px rgba(0, 0, 0, 0.09), 0px 11.698px 23.395px 0px rgba(0, 0, 0, 0.06),
+    0px 6.254px 12.508px 0px rgba(0, 0, 0, 0.05), 0px 3.506px 7.012px 0px rgba(0, 0, 0, 0.05),
+    0px 1.862px 3.724px 0px rgba(0, 0, 0, 0.04), 0px 0.775px 1.55px 0px rgba(0, 0, 0, 0.03);
+  height: 72px;
+}
+
+header h1 {
+  color: #fbfbfb;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.container-header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button {
+  background-color: #004ba8;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #45a049;
+}
+
+.result {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+}
