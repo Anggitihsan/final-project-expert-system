@@ -1,0 +1,242 @@
+[
+    {
+      "cpu": "Intel",
+      "gpu": "No",
+      "ram": 8,
+      "storage": 256,
+      "ukuran_layar": 12,
+      "berat": 2,
+      "gaming": "No",
+      "laptop_model": "Lenovo Yoga"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "No",
+      "ram": 4,
+      "storage": 256,
+      "ukuran_layar": 15,
+      "berat": 3,
+      "gaming": "No",
+      "laptop_model": "Chromebook"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "Yes",
+      "ram": 12,
+      "storage": 1000,
+      "ukuran_layar": 15,
+      "berat": 4,
+      "gaming": "Yes",
+      "laptop_model": "Acer Nitro"
+    },
+    {
+      "cpu": "Intel",
+      "gpu": "Yes",
+      "ram": 6,
+      "storage": 256,
+      "ukuran_layar": 10,
+      "berat": 1,
+      "gaming": "No",
+      "laptop_model": "Asus Zenbook"
+    },
+    {
+      "cpu": "Intel",
+      "gpu": "No",
+      "ram": 5,
+      "storage": 1000,
+      "ukuran_layar": 11,
+      "berat": 1,
+      "gaming": "No",
+      "laptop_model": "Lenovo Yoga"
+    },
+    {
+      "cpu": "Intel",
+      "gpu": "Yes",
+      "ram": 5,
+      "storage": 256,
+      "ukuran_layar": 10,
+      "berat": 1,
+      "gaming": "Yes",
+      "laptop_model": "ASUS ROG"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "No",
+      "ram": 15,
+      "storage": 256,
+      "ukuran_layar": 15,
+      "berat": 2,
+      "gaming": "No",
+      "laptop_model": "Acer Aspire"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "No",
+      "ram": 4,
+      "storage": 512,
+      "ukuran_layar": 15,
+      "berat": 1,
+      "gaming": "No",
+      "laptop_model": "Chromebook"
+    },
+    {
+      "cpu": "Intel",
+      "gpu": "Yes",
+      "ram": 16,
+      "storage": 512,
+      "ukuran_layar": 10,
+      "berat": 2,
+      "gaming": "No",
+      "laptop_model": "Asus Zenbook"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "No",
+      "ram": 16,
+      "storage": 256,
+      "ukuran_layar": 11,
+      "berat": 3,
+      "gaming": "No",
+      "laptop_model": "Dell Latitude"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "No",
+      "ram": 10,
+      "storage": 512,
+      "ukuran_layar": 13,
+      "berat": 3,
+      "gaming": "No",
+      "laptop_model": "Lenovo Yoga"
+    },
+    {
+      "cpu": "AMD",
+      "gpu": "Yes",
+      "ram": 8,
+      "storage": 256,
+      "ukuran_layar": 16,
+      "berat": 4,
+      "gaming": "Yes",
+      "laptop_model": "MSI"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 6,
+        "storage": 1000,
+        "ukuran_layar": 14,
+        "berat": 1,
+        "gaming": "No",
+        "laptop_model": "Acer Aspire"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 14,
+        "storage": 256,
+        "ukuran_layar": 11,
+        "berat": 1,
+        "gaming": "No",
+        "laptop_model": "Asus Zenbook"
+    },
+    {
+        "cpu": "AMD",
+        "gpu": "Yes",
+        "ram": 9,
+        "storage": 512,
+        "ukuran_layar": 13,
+        "berat": 2,
+        "gaming": "No",
+        "laptop_model": "MSI"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 16,
+        "storage": 1000,
+        "ukuran_layar": 11,
+        "berat": 4,
+        "gaming": "No",
+        "laptop_model": "Asus Zenbook"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 5,
+        "storage": 512,
+        "ukuran_layar": 11,
+        "berat": 4,
+        "gaming": "No",
+        "laptop_model": "Acer Aspire"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 15,
+        "storage": 512,
+        "ukuran_layar": 10,
+        "berat": 4,
+        "gaming": "No",
+        "laptop_model": "Asus Zenbook"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 5,
+        "storage": 256,
+        "ukuran_layar": 12,
+        "berat": 3,
+        "gaming": "No",
+        "laptop_model": "Chromebook"
+    },
+    {
+        "cpu": "AMD",
+        "gpu": "Yes",
+        "ram": 11,
+        "storage": 256,
+        "ukuran_layar": 15,
+        "berat": 4,
+        "gaming": "Yes",
+        "laptop_model": "MSI"
+    },
+    {
+        "cpu": "AMD",
+        "gpu": "Yes",
+        "ram": 5,
+        "storage": 512,
+        "ukuran_layar": 12,
+        "berat": 3,
+        "gaming": "No",
+        "laptop_model": "Dell Latitude"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "Yes",
+        "ram": 13,
+        "storage": 1000,
+        "ukuran_layar": 12,
+        "berat": 2,
+        "gaming": "Yes",
+        "laptop_model": "ASUS ROG"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "No",
+        "ram": 4,
+        "storage": 512,
+        "ukuran_layar": 13,
+        "berat": 1,
+        "gaming": "No",
+        "laptop_model": "Chromebook"
+    },
+    {
+        "cpu": "Intel",
+        "gpu": "Yes",
+        "ram": 10,
+        "storage": 512,
+        "ukuran_layar": 12,
+        "berat": 3,
+        "gaming": "Yes",
+        "laptop_model": "Lenovo Legion"
+    }
+]    
