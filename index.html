@@ -60,7 +60,11 @@
             });
 
             const result = await response.json();
-            document.getElementById('result').innerText = `Rekomendasi laptop terbaik: ${result.laptop_model} dengan similarity ${result.similarity}`;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>Top 3 Laptop Recommendations</h2>';
+            result.laptops.forEach(laptop => {
+                resultDiv.innerHTML += `<p>Model: ${laptop.laptop_model} - Similarity: ${laptop.similarity}</p>`;
+            });
         });
     </script>
 </body>

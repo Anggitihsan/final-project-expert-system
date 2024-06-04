@@ -56,21 +56,20 @@ app.post('/recommend', (req, res) => {
     newProblem.ukuran_layar = parseFloat(newProblem.ukuran_layar);
     newProblem.berat = parseFloat(newProblem.berat);
 
-    // Menemukan kasus yang paling mirip
-    let bestMatch = null;
-    let highestSimilarity = -1;
+    // Menemukan 3 kasus yang paling mirip
+    const similarities = cases.map(caseItem => ({
+        laptop_model: caseItem.laptop_model,
+        similarity: calculateSimilarity(caseItem, newProblem)
+    }));
 
-    for (const caseItem of cases) {
-        const pointSimilarity = calculateSimilarity(caseItem, newProblem);
-        if (pointSimilarity > highestSimilarity) {
-            highestSimilarity = pointSimilarity;
-            bestMatch = caseItem;
-        }
-    }
+    // Urutkan berdasarkan similarity tertinggi
+    similarities.sort((a, b) => b.similarity - a.similarity);
+
+    // Ambil 3 kasus terbaik
+    const top3 = similarities.slice(0, 3);
 
     res.json({
-        laptop_model: bestMatch.laptop_model,
-        similarity: highestSimilarity
+        laptops: top3
     });
 });
 
