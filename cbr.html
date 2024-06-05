@@ -48,6 +48,18 @@
     <div id="result" class="result"></div>
 
     <script>
+        
+        document.getElementById('gpu').addEventListener('change', function() {
+            const gpuValue = this.value;
+            const gamingSelect = document.getElementById('gaming');
+            if (gpuValue === 'No') {
+                gamingSelect.value = 'No';
+                gamingSelect.disabled = true;
+            } else {
+                gamingSelect.disabled = false;
+            }
+        });
+
         document.getElementById('laptopForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             const formData = new FormData(event.target);
