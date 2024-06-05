@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule-Based Recommendation</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 8px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Laptop Requirements (Rule-Based)</h1>
+    <form id="ruleBasedForm">
+        <div class="card" id="gpuCard">
+            <label for="GPU">GPU:</label>
+            <select id="GPU" name="GPU" required>
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="card" id="gamingCard" style="display:none;">
+            <label for="Gaming">Gaming:</label>
+            <select id="Gaming" name="Gaming">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="card" id="ramCard" style="display:none;">
+            <label for="Ram">RAM (GB):</label>
+            <input type="number" id="Ram" name="Ram" min="4" max="16">
+        </div>
+
+        <div class="card" id="storageCard" style="display:none;">
+            <label for="Storage">Storage (GB):</label>
+            <select id="Storage" name="Storage">
+                <option value="">Select...</option>
+                <option value="256">256</option>
+                <option value="512">512</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+
+        <div class="card" id="screenSizeCard" style="display:none;">
+            <label for="UkuranLayar">Screen Size (inches):</label>
+            <input type="number" id="UkuranLayar" name="UkuranLayar" min="10" max="16">
+        </div>
+
+        <button type="submit" style="display:none;" id="submitBtn">Get Recommendation</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const gpuCard = document.getElementById('gpuCard');
+        const gamingCard = document.getElementById('gamingCard');
+        const ramCard = document.getElementById('ramCard');
+        const storageCard = document.getElementById('storageCard');
+        const screenSizeCard = document.getElementById('screenSizeCard');
+        const submitBtn = document.getElementById('submitBtn');
+
+        document.getElementById('GPU').addEventListener('change', function() {
+            if (this.value === 'Yes') {
+                gamingCard.style.display = 'block';
+            } else {
+                gamingCard.style.display = 'none';
+                ramCard.style.display = 'block';
+            }
+        });
+
+        document.getElementById('Gaming').addEventListener('change', function() {
+            ramCard.style.display = 'block';
+        });
+
+        document.getElementById('Ram').addEventListener('input', function() {
+            if (this.value) {
+                storageCard.style.display = 'block';
+            }
+        });
+
+        document.getElementById('Storage').addEventListener('change', function() {
+            if (this.value) {
+                screenSizeCard.style.display = 'block';
+                submitBtn.style.display = 'block';
+            }
+        });
+
+        document.getElementById('ruleBasedForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+                GPU: formData.get('GPU'),
+                Gaming: formData.get('Gaming'),
+                Ram: parseInt(formData.get('Ram')),
+                Storage: parseInt(formData.get('Storage')),
+                UkuranLayar: parseFloat(formData.get('UkuranLayar'))
+            };
+
+            fetch('/recommendation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('result').innerHTML = `<h2>Recommended Laptop: ${result.recommendation}</h2>`;
+            });
+        });
+    </script>
+</body>
+</html>

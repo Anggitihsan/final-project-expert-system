@@ -1,11 +1,10 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON bodies
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
@@ -15,7 +14,7 @@ function loadCases(filePath) {
     return JSON.parse(data);
 }
 
-// Fungsi untuk menghitung similarity
+// Fungsi untuk menghitung similarity (CBR)
 function calculateSimilarity(case1, case2) {
     const totalCriteria = 7; // Sesuaikan dengan jumlah kriteria
 
@@ -45,10 +44,10 @@ function calculateSimilarity(case1, case2) {
     return similarity / totalCriteria;
 }
 
-// Memuat kasus dari file JSON
+// Memuat kasus dari file JSON (CBR)
 const cases = loadCases('laptop_cases.json');
 
-// Route to handle form submission
+// Route for Case-Based Reasoning recommendation
 app.post('/recommend', (req, res) => {
     const newProblem = req.body;
     newProblem.ram = parseInt(newProblem.ram);
@@ -71,6 +70,75 @@ app.post('/recommend', (req, res) => {
     res.json({
         laptops: top3
     });
+});
+
+// Route for Rule-Based recommendation
+app.post('/recommendation', (req, res) => {
+    const { GPU, Gaming, Ram, Storage, UkuranLayar } = req.body;
+    let laptop_model = 'tidak ada laptop sesuai keinginan anda';
+
+    if (GPU === 'Yes') {
+        if (Gaming === 'Yes') {
+            if (Ram > 9) {
+                if (UkuranLayar >= 13) {
+                    laptop_model = 'Legion';
+                } else if (UkuranLayar < 13) {
+                    laptop_model = 'ROG';
+                }
+            } else if (Ram <= 9) {
+                if (Storage == 1000) {
+                    laptop_model = 'Legion';
+                } else if (Storage == 256 || Storage == 512) {
+                    laptop_model = 'MSI';
+                }
+            }
+        } else if (Gaming === 'No') {
+            if (Ram > 9) {
+                laptop_model = 'Asus Zenbook';
+            } else if (Ram <= 9) {
+                if (Storage >= 512) {
+                    laptop_model = 'Lenovo Yoga';
+                } else if (Storage < 512) {
+                    laptop_model = 'Dell Latitude';
+                }
+            }
+        }
+    } else if (GPU === 'No') {
+        if (Ram > 9) {
+            if (Storage >= 512) {
+                laptop_model = 'Lenovo Yoga';
+            } else if (Storage < 512) {
+                laptop_model = 'Acer Aspire';
+            }
+        } else if (Ram <= 9) {
+            if (Storage >= 512) {
+                laptop_model = 'Dell Latitude';
+            } else if (Storage < 512) {
+                if (UkuranLayar >= 12) {
+                    laptop_model = 'Acer Aspire';
+                } else if (UkuranLayar < 12) {
+                    laptop_model = 'Chromebook';
+                }
+            }
+        }
+    }
+
+    res.send({ recommendation: laptop_model });
+});
+
+// Serve the form.html file
+app.get('/rule-based', (req, res) => {
+    res.sendFile(path.join(__dirname, 'rule-based.html'));
+});
+
+// Serve the cbr.html file
+app.get('/cbr', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cbr.html'));
+});
+
+// Serve the index.html file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
