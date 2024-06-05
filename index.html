@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Recommendation Method</title>
+    <link rel="stylesheet" href="homepage-style.css" />
 </head>
 <body>
-    <h1>Select Recommendation Method</h1>
-    <form id="methodForm">
-        <label for="method">Recommendation Method:</label>
-        <select id="method" name="method" required>
-            <option value="cbr">Case-Based Reasoning</option>
-            <option value="rule-based">Rule-Based</option>
-        </select><br><br>
-        <button type="submit">Next</button>
-    </form>
+    <header>
+        <h1>Sistem Pakar Rekomendasi Laptop</h1>
+    </header>
+    <section class="container">
+        <form id="methodForm" class="form">
+            <label for="method" class="form-label">Recommendation Method:</label>
+            <select id="method" name="method" class="form-input" required>
+                <option value="cbr">Case-Based Reasoning</option>
+                <option value="rule-based">Rule-Based</option>
+            </select><br><br>
+            <button type="submit" class="form-button">Next</button>
+        </form>
+    </section>
 
     <script>
         document.getElementById('methodForm').addEventListener('submit', function(event) {

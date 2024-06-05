@@ -4,60 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rule-Based Recommendation</title>
-    <style>
-        .card {
-            border: 1px solid #ccc;
-            padding: 16px;
-            margin: 8px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="rule-based.css" />
 </head>
 <body>
-    <h1>Enter Laptop Requirements (Rule-Based)</h1>
-    <form id="ruleBasedForm">
-        <div class="card" id="gpuCard">
-            <label for="GPU">GPU:</label>
-            <select id="GPU" name="GPU" required>
-                <option value="">Select...</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-        </div>
+    <header>
+        <h1><a href="index.html">Sistem Pakar Rekomendasi Laptop</a></h1>
+    </header>
+    <h1 id="jenis-metode">Rule-Based Reasoning</h1>
+    <section class="container">
+        <form id="ruleBasedForm" class="form">
+            <div class="card" id="gpuCard">
+                <label for="GPU" class="form-label">GPU:</label>
+                <select id="GPU" name="GPU" class="form-input" required>
+                    <option value="">Select...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
 
-        <div class="card" id="gamingCard" style="display:none;">
-            <label for="Gaming">Gaming:</label>
-            <select id="Gaming" name="Gaming">
-                <option value="">Select...</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-        </div>
+            <div class="card" id="gamingCard" style="display:none;">
+                <label for="Gaming" class="form-label">Gaming:</label>
+                <select id="Gaming" name="Gaming" class="form-input">
+                    <option value="">Select...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
 
-        <div class="card" id="ramCard" style="display:none;">
-            <label for="Ram">RAM (GB):</label>
-            <input type="number" id="Ram" name="Ram" min="4" max="16">
-        </div>
+            <div class="card" id="ramCard" style="display:none;">
+                <label for="Ram" class="form-label">RAM (GB):</label>
+                <input type="number" id="Ram" name="Ram" class="form-input" min="4" max="16">
+            </div>
 
-        <div class="card" id="storageCard" style="display:none;">
-            <label for="Storage">Storage (GB):</label>
-            <select id="Storage" name="Storage">
-                <option value="">Select...</option>
-                <option value="256">256</option>
-                <option value="512">512</option>
-                <option value="1000">1000</option>
-            </select>
-        </div>
+            <div class="card" id="storageCard" style="display:none;">
+                <label for="Storage" class="form-label">Storage (GB):</label>
+                <select id="Storage" name="Storage" class="form-input">
+                    <option value="">Select...</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                    <option value="1000">1000</option>
+                </select>
+            </div>
 
-        <div class="card" id="screenSizeCard" style="display:none;">
-            <label for="UkuranLayar">Screen Size (inches):</label>
-            <input type="number" id="UkuranLayar" name="UkuranLayar" min="10" max="16">
-        </div>
+            <div class="card" id="screenSizeCard" style="display:none;">
+                <label for="UkuranLayar" class="form-label">Screen Size (inches):</label>
+                <input type="number" id="UkuranLayar" name="UkuranLayar" class="form-input" min="10" max="16">
+            </div>
 
-        <button type="submit" style="display:none;" id="submitBtn">Get Recommendation</button>
-    </form>
-    <div id="result"></div>
+            <button type="submit" class="form-button" style="display:none;" id="submitBtn">Get Recommendation</button>
+        </form>
+    </section>
+    <div id="result" class="result"></div>
 
     <script>
         const gpuCard = document.getElementById('gpuCard');
